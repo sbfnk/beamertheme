@@ -1,27 +1,20 @@
-\newcommand{\singleslide}[1]{{%
-    \usebeamerfont{title}
-    \begin{frame}[plain,c]
-      \begin{center}
-        \begin{minipage}[h]{.75\textwidth}
-          \centering
-          #1
-      \end{minipage}
-      \end{center}
-    \end{frame}
-}}
-
-\newcommand{\sectionslide}[3][]{{%
-    \setbeamercolor{background canvas}{bg=structure.fg}
-    \setbeamercolor{enumerate items}{fg=structure.bg}
-    \setbeamercolor{local structure}{fg=structure.bg}
-    \setbeamerfont{item}{family=\fontspec{Varela Round}}
-    \usebeamerfont{title}
-    \begin{frame}[plain]
-        \vspace{.6\paperheight}
-        \Huge
-        {\begin{enumerate}\setcounter{enumi}{#2-1}\color{structure.bg}
-          \item #3\end{enumerate}}\vspace*{-0.3cm}
-        \hspace*{-0.2cm}\textcolor{white}{\rule{\textwidth}{0.025cm}}
-        \large \textcolor{structure.bg}{#1}
-    \end{frame}
-}}
+\setbeamertemplate{frametitle}
+{%
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=0.3cm,wd=\the\@tempdima]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip0.1ex%
+    \strut\insertframetitle\strut\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\strut\par}%
+      \fi
+    }%
+    \vskip0.5ex%
+    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}

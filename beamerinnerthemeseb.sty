@@ -1,3 +1,21 @@
 \setbeamertemplate{itemize item}{\tiny\raise2pt\hbox{$\color{black}\bullet$}}
 \setbeamertemplate{itemize subitem}{\tiny\raise2pt\hbox{$\color{black}\bullet$}}
 \setbeamertemplate{itemize subsubitem}{\tiny\raise2pt\hbox{$\color{black}\bullet$}}
+
+\addtobeamertemplate{title page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.center)]
+    {
+      \includegraphics[keepaspectratio,width=\paperwidth,height=\paperheight]{titlelogo.jpg}
+    };
+  \end{tikzpicture}
+}{}
+
+\addtobeamertemplate{section page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[at=(current page.center)]
+    {
+      \includegraphics[keepaspectratio,width=\paperwidth,height=\paperheight]{partlogo.jpg}
+    };
+  \end{tikzpicture}
+}{}
