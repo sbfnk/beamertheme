@@ -1,4 +1,4 @@
 beamertheme
 ===========
 
-Beamer theme
+Unofficial LSHTM beamer theme
