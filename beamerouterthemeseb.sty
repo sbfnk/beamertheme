@@ -17,4 +17,7 @@
     \vskip0.5ex%
     \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
   \end{beamercolorbox}%
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north east] at (current page.north east) {\includegraphics[height=1.0cm]{slidelogo.png}};
+  \end{tikzpicture}
 }
